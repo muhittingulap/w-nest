@@ -1,0 +1,19 @@
+version: '3'
+
+networks: 
+  wugo:
+
+services:
+
+  # Nest api server 
+  app:
+    container_name: nestapi
+    build: 
+      context: .
+      dockerfile: node/prod.yml
+    volumes:
+      - ./../app:/home/wugo/app/
+    ports:
+      - 3000:3000
+    networks: 
+      - wugo

@@ -1,0 +1,8 @@
+FROM node:18-alpine
+
+WORKDIR /home/wugo/app
+COPY . .
+
+CMD yarn install && yarn build && yarn start:prod
+
+EXPOSE 3000
